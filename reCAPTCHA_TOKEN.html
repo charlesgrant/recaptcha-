@@ -15,9 +15,31 @@
     <script>
     grecaptcha.ready(function() {
       grecaptcha.execute('6Ld_d7QUAAAAAA1dPZRY1CHYU82N07pYio2ItK86', {action: 'login'}).then(function(token) {
-            AndroidJs.callToken(token)
+            var system = judgeSystem()
+if (system == 0) {
+            // android
+            window.mobile.getToken(token);
+        } else if (operateSystem == 1) {
+            // ios
+            window.webkit.messageHandlers.getToken.postMessage(token);
+        }
       });
     });
+
+function judgeSystem(){
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if(isAndroid) {
+                return 0;
+            }
+            if(isiOS) {
+                return 1;
+            }
+            return -1
+        }
+
+
     </script>
 
 </head>
