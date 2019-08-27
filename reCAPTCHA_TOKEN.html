@@ -11,7 +11,7 @@
 
     <title>token</title>
 
-    <script src="https://www.google.com/recaptcha/api.js?render=6Ld_d7QUAAAAAA1dPZRY1CHYU82N07pYio2ItK86"></script>
+    <script src="https://www.recaptcha.net/recaptcha/api.js?render=6Ld_d7QUAAAAAA1dPZRY1CHYU82N07pYio2ItK86"></script>
     <script>
     grecaptcha.ready(function() {
       grecaptcha.execute('6Ld_d7QUAAAAAA1dPZRY1CHYU82N07pYio2ItK86', {action: 'login'}).then(function(token) {
@@ -19,7 +19,7 @@
 if (system == 0) {
             // android
             window.mobile.getToken(token);
-        } else if (operateSystem == 1) {
+        } else if (system == 1) {
             // ios
             window.webkit.messageHandlers.getToken.postMessage(token);
         }
