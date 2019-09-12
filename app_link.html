@@ -1,0 +1,29 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <style type="text/css">
+            body, html, #allmap {width: 100%; height: 100%; margin: 0;font-family: "微软雅黑"; z-index: -1;}
+    </style>
+
+    <script>
+  function validate(event){
+      
+  }
+  function onload() {
+    var element = document.getElementById('submit');
+    element.onclick = validate;
+  }
+</script>
+
+</head>
+<body>
+<form>
+    Name: (required) <input id="field" name="field">
+    <button id='submit'>submit</button>
+</form>
+<script>onload();</script>
+</body>
+</html>
